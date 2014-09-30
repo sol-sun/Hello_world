@@ -1,0 +1,69 @@
+\documentclass{jsarticle}
+\usepackage{listings}
+\usepackage{color}
+\definecolor{lightgray}{rgb}{.9,.9,.9}
+\definecolor{darkgray}{rgb}{.4,.4,.4}
+\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+\lstdefinelanguage{HTML}{
+  keywords={HTML, HEAD, TITLE, STYLE, BODY},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  ndkeywordstyle=\color{darkgray}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=false,
+  comment=[l]{<!--,-->},
+  morecomment=[s]{<!--}{-->},
+  commentstyle=\color{purple}\ttfamily,
+  stringstyle=\color{red}\ttfamily,
+  morestring=[b]',
+  morestring=[b]"
+}
+\lstset{
+   language=HTML,
+   backgroundcolor=\color{lightgray},
+   extendedchars=true,
+   basicstyle=\footnotesize\ttfamily,
+   showstringspaces=false,
+   showspaces=false,
+   numbers=left,
+   numberstyle=\footnotesize,
+   numbersep=9pt,
+   tabsize=2,
+   breaklines=true,
+   showtabs=false,
+   captionpos=b
+}
+\title{HTML・CSSについて}
+\date{}
+\author{ログイン名: t11881tm}
+\begin{document}
+\maketitle
+HTMLは``HyperText Markup Language''の略であり，ホームページ制作でかかすことができない言語である．言語といってもC、Rubyなどの``言語''とは厳密には性質が異なり，ハイパーテキスト(通常のテキストを超えたテキストのこと)を生成するための構造規範言語といったほうがよい．
+HTMLは歴史的背景からとてもシンプルな構造をしており，コンピュータの機種などに関係なく表示することができる．基本的には，``タグ''(記号``$<$''と``$>$''で表す)とよばれる要素を用いてその終止タグ(スラッシュ記号``$/$''をタグの最初に挟む)との間の場所が文章中でどんな役割をもつか(タイトルなのか，段落なのか等)を指定することができる．
+構造の例を下に示す(Listing 1)．
+
+\medskip
+\begin{lstlisting}[caption=My HTML Example(./sample.html)]
+<HTML>
+  <HEAD>
+    <TITLE></TITLE>
+    <STYLE type="text/css">
+      <!--
+          BODY { color: red }
+          P { color: #0000ff }    /* 段落の文字色 */
+          H1 { color: #00ff00 }   /* 見出しの文字色 */
+        -->
+    </STYLE>
+  </HEAD>
+  <BODY>
+    Hello, World
+  </BODY>
+</HTML>
+\end{lstlisting}
+
+HTML文章全体は$<$HTML$>$と終止タグ$<$$/$HTML$>$で囲まれ，その中に文章の構造を指定していく．$<$TITLE$>$は文字通り文章のタイトルを明示するときに用いるタグであったり，$<$BODY$>$は基本的に文章の大枠を占める文のためのタグである．
+
+$<$STYLE$>$タグには通常，CSS(Cascading style Sheets)を埋め込む，CSSはHTMLとは違う構造をしており，別個のものであり，文章中の色・文字のサイズ・レイアウトの表示スタイルを主に記述することができる．CSSの記述は「HTMLの〜〜要素の、ーーというスタイルなどを、・・にする．」というものである．Listing 1では，ページ上の$<$BODY$>$，$<$P$>$，$<$H1$>$タグ内の文字の色を変えるスクリプトを埋め込んだ．
+
+構造を決定しているHTMLとデザインを記述するCSSを別に扱うことによって様々なメリットが生まれる．例えば，膨大なコードになった場合，複数のファイルに分けることができること．また，そうすることによるスクリプトの再利用生を高めることが期待できることなどが挙げられる．この分割の仕組みは本文章を記述している\TeX(\LaTeX)においても採用されている．
+\end{document}
