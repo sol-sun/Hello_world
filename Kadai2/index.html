@@ -1,0 +1,28 @@
+<html>
+    <script>
+      var addition;
+      addition =  function(a, b){
+      var sum = a + b;
+      return sum;
+      }
+
+      var multiplication;
+      multiplication = function(a, b){
+      var multi = a * b;
+      return multi;
+      }
+
+      var complex;
+      complex = function(a,b){
+      var num =  2 * (addition(a,b) + multiplication(a,b)) + 10;
+      return num;
+      }
+
+      for(var i=0;i<3;i++){
+		      document.write(complex(1,2));
+		      document.write("<br>");
+		      }
+      
+</script>
+</html>
+    
