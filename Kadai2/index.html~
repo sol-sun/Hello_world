@@ -4,25 +4,27 @@
       addition =  function(a, b){
       var sum = a + b;
       return sum;
-      }
-
+      };
+      
       var multiplication;
       multiplication = function(a, b){
       var multi = a * b;
       return multi;
-      }
-
+      };
+      
       var complex;
       complex = function(a,b){
-      var num =  2 * (addition(a,b) + multiplication(a,b)) + 10;
-      return num;
-      }
-
+      
+      var result1 =  (2 * addition(a,b)) + 10;
+      var result2 = (2 * multiplication(a,b)) + 10;
+      return result1, result2;
+      };
+      
       for(var i=0;i<3;i++){
 		      document.write(complex(1,2));
 		      document.write("<br>");
 		      }
-      
-</script>
-    </html>
+		      
+		      </script>
+</html>
     

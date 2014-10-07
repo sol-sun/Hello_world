@@ -4,25 +4,30 @@
       addition =  function(a, b){
       var sum = a + b;
       return sum;
-      }
-
+      };
+      
       var multiplication;
       multiplication = function(a, b){
       var multi = a * b;
       return multi;
-      }
-
+      };
+      
       var complex;
       complex = function(a,b){
-      var num =  2 * (addition(a,b) + multiplication(a,b)) + 10;
-      return num;
-      }
-
-      for(var i=0;i<3;i++){
-		      document.write(complex(1,2));
-		      document.write("<br>");
-		      }
       
-</script>
+      var result1 =  (2 * addition(a,b)) + 10;
+      var result2 = (2 * multiplication(a,b)) + 10;
+      return [result1, result2];
+      };
+      
+      var result = [];
+      document.write("関数complex3回実行(2x + 10)<br><hr>")
+      for(var i=0;i<3;i++){
+		      result =  complex(3,2) ;
+		      document.write("関数addition =>"+  result[0] + ", ");
+		      document.write("関数multiplication =>"+ result[1] +"<br><br>");
+		      }
+		      
+		      </script>
 </html>
     
