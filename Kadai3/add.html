@@ -1,0 +1,46 @@
+var frac = function(bunsi,bunbo){
+    var bunsu={
+	bunsi:bunsi,
+	bunbo:bunbo
+    };
+    return bunsu;
+}
+
+
+var add=function(a,b){
+    var bunsi;
+    var bunbo;
+
+    if(Number.isInteger(a)&&Number.isInteger(b)){
+	return a + b;
+    }
+
+    if(Number.isInteger(a)){
+	a = frac(a,1);
+    }
+
+    if(Number.isInteger(b)){
+	b = frac(b,1);
+    }
+
+    if(a.bunbo!= b.bunbo){
+	bunsi=a.bunsi * b.bunbo + b.bunsi * a.bunbo;
+	bunbo=a.bunbo * b.bunbo;
+    }  else{
+	bunsi=a.bunsi + b.bunsi;
+	bunbo=a.bunbo;
+    }
+    var answer=frac(bunsi, bunbo);
+    return answer;
+}
+
+
+var a=add(frac(1,3),frac(4,3));
+var b=add(frac(1,4),frac(1,1));
+var c=add(frac(4,1),frac(2,3));
+var d=add(frac(1,1),frac(2,1));
+document.write(a["bunsi"]+", "+a["bunbo"]);
+document.write(b["bunsi"]+", "+b["bunbo"]);
+document.write(c["bunsi"]+", "+c["bunbo"]);
+document.write(d["bunsi"]+", "+d["bunbo"]);
+
